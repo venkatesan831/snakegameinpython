@@ -35,6 +35,8 @@ while is_on:
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
         sc.reset()
         snake.reset()
+        print("GAME OVER")
+        is_on = False
 
     for seg in snake.segment:
         if seg == snake.head:
@@ -42,8 +44,10 @@ while is_on:
         elif snake.head.distance(seg) < 10:
             sc.reset()
             snake.reset()
+            print("GAME OVER")
+            is_on = False
 
-
+screen.bye() 
 
 screen.exitonclick()
 
